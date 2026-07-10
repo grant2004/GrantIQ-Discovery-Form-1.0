@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GrantIQ | Business Discovery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<section class="cover" id="coverPage">
+  <div class="cover-bar"></div>
+  <div class="cover-blob cover-blob-1"></div>
+  <div class="cover-blob cover-blob-2"></div>
+
+  <div class="cover-content">
+    <img src="assets/logo-full.png" alt="GrantIQ — intelligent solutions. Smarter business." class="cover-logo">
+    <span class="eyebrow">Business Discovery Engagement</span>
+    <h1>Let's map your path to smarter business.</h1>
+    <p class="lead">Before we recommend a single automation, we listen. This short discovery experience helps GrantIQ understand your business, your tools, and your goals — so every recommendation we make actually fits.</p>
+    <button type="button" class="btn btn-primary" id="coverStartBtn">Begin Discovery <span class="arrow">→</span></button>
+    <div class="cover-meta">
+      <span>8 steps</span><span class="dot"></span><span>~5 minutes</span><span class="dot"></span><span>No data saved yet</span>
+    </div>
+  </div>
+</section>
+
+<div class="app is-hidden" id="appShell">
+
+  <!-- Engagement Rail -->
+  <aside class="rail">
+    <div class="rail-brand">
+      <div class="rail-brand-row">
+        <span class="brand-mark"><img src="assets/logo-icon.png" alt="GrantIQ logo"></span>
+        <span class="brand-name">GrantIQ</span>
+      </div>
+      <span class="brand-tagline">intelligent solutions. <em>Smarter business.</em></span>
+    </div>
+
+    <ol class="rail-steps" id="railSteps">
+      <li class="rail-step" data-step="0"><span class="rail-dot">01</span><span class="rail-label">Welcome</span></li>
+      <li class="rail-step" data-step="1"><span class="rail-dot">02</span><span class="rail-label">Business Details</span></li>
+      <li class="rail-step" data-step="2"><span class="rail-dot">03</span><span class="rail-label">Current Processes</span></li>
+      <li class="rail-step" data-step="3"><span class="rail-dot">04</span><span class="rail-label">Current Software</span></li>
+      <li class="rail-step" data-step="4"><span class="rail-dot">05</span><span class="rail-label">Business Challenges</span></li>
+      <li class="rail-step" data-step="5"><span class="rail-dot">06</span><span class="rail-label">Automation Opportunities</span></li>
+      <li class="rail-step" data-step="6"><span class="rail-dot">07</span><span class="rail-label">Business Goals</span></li>
+      <li class="rail-step" data-step="7"><span class="rail-dot">08</span><span class="rail-label">Review &amp; Submit</span></li>
+    </ol>
+
+    <div class="rail-footer">
+      <p>An automation readiness engagement, mapped step by step.</p>
+    </div>
+  </aside>
+
+  <!-- Main Panel -->
+  <main class="panel">
+
+    <!-- Mobile top bar -->
+    <div class="mobile-topbar">
+      <div class="mobile-brand"><span class="brand-mark"><img src="assets/logo-icon.png" alt="GrantIQ logo"></span> GrantIQ</div>
+      <div class="mobile-step-label" id="mobileStepLabel">Step 1 of 8</div>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="progress-track" aria-hidden="true">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="card" id="formCard">
+      <form id="discoveryForm" novalidate>
+
+        <!-- STEP 0: WELCOME -->
+        <section class="step active" data-step="0">
+          <span class="eyebrow">Business Discovery</span>
+          <h1>Let's map your path to automation.</h1>
+          <p class="lead">This short engagement form helps GrantIQ understand how your business runs today, so we can pinpoint exactly where automation will save you the most time and money. It takes about 5 minutes.</p>
+
+          <div class="welcome-points">
+            <div class="w-point">
+              <span class="w-num">01</span>
+              <p>Tell us about your business and how it operates.</p>
+            </div>
+            <div class="w-point">
+              <span class="w-num">02</span>
+              <p>Flag the tasks and tools slowing your team down.</p>
+            </div>
+            <div class="w-point">
+              <span class="w-num">03</span>
+              <p>Get a discovery summary tailored to your goals.</p>
+            </div>
+          </div>
+
+          <div class="actions actions-start">
+            <button type="button" class="btn btn-primary" data-action="start">Begin Discovery <span class="arrow">→</span></button>
+          </div>
+        </section>
+
+        <!-- STEP 1: BUSINESS DETAILS -->
+        <section class="step" data-step="1">
+          <span class="eyebrow">02 · Business Details</span>
+          <h2>Tell us who we're working with.</h2>
+          <p class="lead">The essentials, so we know your business and how to reach you.</p>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="businessName">Business Name <span class="req">*</span></label>
+              <input type="text" id="businessName" name="businessName" placeholder="e.g. Summit Retail Co." required>
+              <span class="error-msg">Please enter your business name.</span>
+            </div>
+            <div class="field">
+              <label for="contactPerson">Contact Person <span class="req">*</span></label>
+              <input type="text" id="contactPerson" name="contactPerson" placeholder="e.g. Jordan Lee" required>
+              <span class="error-msg">Please enter a contact name.</span>
+            </div>
+            <div class="field">
+              <label for="position">Position <span class="req">*</span></label>
+              <input type="text" id="position" name="position" placeholder="e.g. Operations Manager" required>
+              <span class="error-msg">Please enter a position/title.</span>
+            </div>
+            <div class="field">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required>
+              <span class="error-msg">Please enter a valid email address.</span>
+            </div>
+            <div class="field">
+              <label for="phone">Phone Number <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="e.g. +27 82 123 4567" required>
+              <span class="error-msg">Please enter a valid phone number.</span>
+            </div>
+            <div class="field">
+              <label for="industry">Industry <span class="req">*</span></label>
+              <select id="industry" name="industry" required>
+                <option value="" disabled selected>Select an industry</option>
+                <option>Retail & E-commerce</option>
+                <option>Professional Services</option>
+                <option>Healthcare</option>
+                <option>Manufacturing</option>
+                <option>Construction & Trades</option>
+                <option>Finance & Insurance</option>
+                <option>Hospitality</option>
+                <option>Education</option>
+                <option>Technology</option>
+                <option>Other</option>
+              </select>
+              <span class="error-msg">Please select an industry.</span>
+            </div>
+            <div class="field">
+              <label for="employees">Number of Employees <span class="req">*</span></label>
+              <select id="employees" name="employees" required>
+                <option value="" disabled selected>Select a range</option>
+                <option>1–5</option>
+                <option>6–20</option>
+                <option>21–50</option>
+                <option>51–200</option>
+                <option>200+</option>
+              </select>
+              <span class="error-msg">Please select a company size.</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="businessDescription">Business Description <span class="req">*</span></label>
+            <textarea id="businessDescription" name="businessDescription" rows="4" placeholder="In a few sentences, what does your business do and who do you serve?" required></textarea>
+            <span class="error-msg">Please describe your business.</span>
+          </div>
+        </section>
+
+        <!-- STEP 2: CURRENT BUSINESS PROCESSES -->
+        <section class="step" data-step="2">
+          <span class="eyebrow">03 · Current Business Processes</span>
+          <h2>How does work move through your business today?</h2>
+          <p class="lead">Think about the tasks your team repeats every day or week — these are usually the easiest to automate.</p>
+
+          <div class="field">
+            <label for="repetitiveTasks">Repetitive Tasks <span class="req">*</span></label>
+            <textarea id="repetitiveTasks" name="repetitiveTasks" rows="6" placeholder="e.g. Manually invoicing clients, copying data between spreadsheets, sending the same follow-up emails, scheduling appointments by hand..." required></textarea>
+            <span class="error-msg">Please describe your repetitive tasks or processes.</span>
+          </div>
+        </section>
+
+        <!-- STEP 3: CURRENT SOFTWARE -->
+        <section class="step" data-step="3">
+          <span class="eyebrow">04 · Current Software</span>
+          <h2>What tools are already part of your workflow?</h2>
+          <p class="lead">List the software, apps, or systems you currently rely on — CRM, accounting, scheduling, communication, anything relevant.</p>
+
+          <div class="field">
+            <label for="currentSoftware">Current Software</label>
+            <textarea id="currentSoftware" name="currentSoftware" rows="6" placeholder="e.g. QuickBooks, Google Workspace, HubSpot, WhatsApp Business, spreadsheets..."></textarea>
+            <span class="error-msg">Please list your current software.</span>
+          </div>
+        </section>
+
+        <!-- STEP 4: BUSINESS CHALLENGES -->
+        <section class="step" data-step="4">
+          <span class="eyebrow">05 · Business Challenges</span>
+          <h2>Where is friction slowing you down?</h2>
+          <p class="lead">Be candid — the challenges you flag here directly shape our recommendations.</p>
+
+          <div class="field">
+            <label for="biggestChallenges">Biggest Challenges <span class="req">*</span></label>
+            <textarea id="biggestChallenges" name="biggestChallenges" rows="6" placeholder="e.g. Losing track of leads, too much time on admin, errors from manual data entry, slow response times..." required></textarea>
+            <span class="error-msg">Please describe your biggest challenges.</span>
+          </div>
+        </section>
+
+        <!-- STEP 5: AUTOMATION OPPORTUNITIES -->
+        <section class="step" data-step="5">
+          <span class="eyebrow">06 · Automation Opportunities</span>
+          <h2>Where do you suspect automation could help most?</h2>
+          <p class="lead">You don't need the technical answer — just where you feel time or accuracy is being lost.</p>
+
+          <div class="field">
+            <label for="automationOpportunity">Automation Opportunity</label>
+            <textarea id="automationOpportunity" name="automationOpportunity" rows="6" placeholder="e.g. Auto-generating invoices, syncing leads between systems, automated appointment reminders..."></textarea>
+            <span class="error-msg">Please share where you see automation potential.</span>
+          </div>
+        </section>
+
+        <!-- STEP 6: BUSINESS GOALS -->
+        <section class="step" data-step="6">
+          <span class="eyebrow">07 · Business Goals</span>
+          <h2>What does success look like from here?</h2>
+          <p class="lead">Tell us what you're aiming for over the next 6–12 months so we can align recommendations to your goals.</p>
+
+          <div class="field">
+            <label for="businessGoals">Business Goals <span class="req">*</span></label>
+            <textarea id="businessGoals" name="businessGoals" rows="6" placeholder="e.g. Free up 10+ hours a week, scale without hiring more admin staff, reduce errors in order processing..." required></textarea>
+            <span class="error-msg">Please describe your business goals.</span>
+          </div>
+        </section>
+
+        <!-- STEP 7: REVIEW & SUBMIT -->
+        <section class="step" data-step="7">
+          <span class="eyebrow">08 · Review &amp; Submit</span>
+          <h2>Let's confirm everything looks right.</h2>
+          <p class="lead">Review your responses below. You can jump back to any step to make changes before submitting.</p>
+
+          <div class="review-list" id="reviewList"></div>
+        </section>
+
+      </form>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-bar" id="navBar">
+      <button type="button" class="btn btn-ghost" id="prevBtn">← Previous</button>
+      <div class="nav-step-count" id="navStepCount">Step 1 of 8</div>
+      <button type="button" class="btn btn-primary" id="nextBtn">Next <span class="arrow">→</span></button>
+    </div>
+
+  </main>
+</div>
+
+<!-- SUCCESS SCREEN -->
+<div class="success-overlay" id="successOverlay">
+  <div class="success-card">
+    <div class="success-icon">
+      <svg viewBox="0 0 52 52" width="52" height="52">
+        <circle class="success-circle" cx="26" cy="26" r="24" fill="none"/>
+        <path class="success-check" fill="none" d="M14 27l7 7 17-17"/>
+      </svg>
+    </div>
+    <span class="eyebrow">Discovery Complete</span>
+    <h2>Thank you — your discovery is in.</h2>
+    <p>A GrantIQ automation consultant will review your responses and reach out within 1–2 business days with tailored recommendations.</p>
+    <div class="success-ref" id="successRef"></div>
+    <button type="button" class="btn btn-primary" id="restartBtn">Start a New Discovery</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
